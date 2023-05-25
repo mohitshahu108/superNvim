@@ -8,7 +8,18 @@ return {
     require("neorg").setup({
       load = {
         ["core.defaults"] = {},
+        ["core.concealer"] = {}, -- loead pretty icons for notes
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              work = "~/notes/work",
+              home = "~/notes/home",
+            },
+          },
+        },
       },
     })
   end,
+  run = ":Neorg sync-parsers",
+  requires = { "nvim-lua/plenary.nvim" },
 }
